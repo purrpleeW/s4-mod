@@ -4,11 +4,7 @@
 //
 #define IDD_EX_DLG                      104
 #define IDI_ICON                        105
-#define IDB_BANNER_IW8_IMG              106
 #define IDB_BANNER_S4_IMG               107
-#define IDB_BANNER_IW9_IMG              108
-#define IDB_BANNER_JUP_IMG              109
-#define IDB_BANNER_HQ_IMG             	110
 #define IDC_EX_DLG_BANNER               1006
 #define IDC_EX_DLG_ICON                 1007
 #define IDC_EX_DLG_SCAN_BTN             1010

@@ -42,13 +42,6 @@ namespace identification::game {
 
 	game_iden get_target_info_game();
 
-	/*namespace iw5 {
-		inline constexpr std::uint32_t v1_9_388110_SP = 0x22886E14;
-		inline constexpr std::uint32_t v1_9_388110_MP = 0x1FE1222A;
-		{ version::iw5::v1_9_388110_SP, "Modern Warfare 3", "1.9.388110", mode::SP },
-		{ version::iw5::v1_9_388110_MP, "Modern Warfare 3", "1.9.388110", mode::MP },
-	}*/
-
 	std::uint32_t get_library_xxh32_checksum(const utils::nt::library& library);
 
 	std::uint32_t get_game_checksum();

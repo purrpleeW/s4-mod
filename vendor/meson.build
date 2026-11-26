@@ -1355,27 +1355,6 @@ xsk_gsc_utils_dep = declare_dependency(
 	dependencies: [zlib_dep]
 )
 
-xsk_gsc_iw8_sources = files(
-	'gsc-tool/src/gsc/engine/iw8.cpp',
-	'gsc-tool/src/gsc/engine/iw8_code.cpp',
-	'gsc-tool/src/gsc/engine/iw8_func.cpp',
-	'gsc-tool/src/gsc/engine/iw8_meth.cpp',
-	'gsc-tool/src/gsc/engine/iw8_token.cpp'
-)
-
-xsk_gsc_iw8_lib = static_library('xsk-gsc-iw8',
-	sources: [xsk_gsc_sources, xsk_gsc_iw8_sources],
-	include_directories: xsk_gsc_inc,
-	cpp_args: ['/Zc:__cplusplus', '/bigobj'],
-	override_options: ['warning_level=0'],
-	name_prefix: ''
-)
-
-xsk_gsc_iw8_dep = declare_dependency(
-	link_with: xsk_gsc_iw8_lib,
-	include_directories: xsk_gsc_inc
-)
-
 xsk_gsc_s4_sources = files(
 	'gsc-tool/src/gsc/engine/s4.cpp',
 	'gsc-tool/src/gsc/engine/s4_code.cpp',

@@ -59,15 +59,6 @@ namespace utils::hashing {
 		return hash_secure_internal(str, hash_64a(pattern, (start ^ str.at(0)) * iv, iv), iv);
 	}
 
-	constexpr std::uint32_t hash_legacy_treyarch_script(const std::string& str) {
-		std::uint32_t hash = 0x4B9ACE2F;
-		for (const char* data = str.data(); *data; data++) {
-			char c = validate_char(*data);
-			hash = ((c + hash) ^ ((c + hash) << 10)) + (((c + hash) ^ ((c + hash) << 10)) >> 6);
-		}
-		return 0x8001 * ((9 * hash) ^ ((9 * hash) >> 11));
-	}
-
 	namespace default_hashers {
 		constexpr std::uint32_t hash_32(const std::string& str, std::uint32_t start = START_DEFAULT_32, std::uint32_t iv = IV_DEFAULT_32) {
 			return utils::hashing::hash_32(str, start, iv);
@@ -90,26 +81,6 @@ namespace utils::hashing {
 			inline constexpr auto operator""_f32a(const char* val, std::size_t length) { return hash_32a(std::string(val, length)); }
 			inline constexpr auto operator""_f64(const char* val, std::size_t length) { return hash_64(std::string(val, length)); }
 			inline constexpr auto operator""_f64a(const char* val, std::size_t length) { return hash_64a(std::string(val, length)); }
-		}
-	}
-
-	namespace t8 {
-		constexpr auto hash_dvar(const std::string& str) { return hash_64(str); }
-		constexpr auto hash_script(const std::string& str) { return hash_legacy_treyarch_script(str); }
-
-		namespace literals {
-			inline constexpr auto operator""_dvar(const char* val, std::size_t length) { return hash_dvar(std::string(val, length)); }
-			inline constexpr auto operator""_script(const char* val, std::size_t length) { return hash_script(std::string(val, length)); }
-		}
-	}
-
-	namespace t9 {
-		inline constexpr auto& hash_dvar = t8::hash_dvar;
-		inline constexpr auto& hash_script = t8::hash_script;
-
-		namespace literals {
-			inline constexpr auto operator""_dvar(const char* val, std::size_t length) { return hash_dvar(std::string(val, length)); }
-			inline constexpr auto operator""_script(const char* val, std::size_t length) { return hash_script(std::string(val, length)); }
 		}
 	}
 
@@ -159,68 +130,4 @@ namespace utils::hashing {
 		}
 	}
 
-	namespace iw9 {
-		constexpr auto hash_asset(const std::string& str) { return hash_64(str, 0x47F5817A5EF961BA); }
-		constexpr auto hash_dvar(const std::string& str) { return hash_secure(str, 0xD86A3B09566EBAAC, "q6n-+7=tyytg94_*", IV_TYPE2_64); }
-		constexpr auto hash_gamemode(const std::string& str) { return hash_64(str, 0xC7F5817A5EF961BA); }
-		constexpr auto hash_script(const std::string& str) { return hash_64a(str, 0x79D6530B0BB9B5D1, IV_TYPE2_64); }
-
-		namespace literals {
-			inline constexpr auto operator""_asset(const char* val, std::size_t length) { return hash_asset(std::string(val, length)); }
-			inline constexpr auto operator""_dvar(const char* val, std::size_t length) { return hash_dvar(std::string(val, length)); }
-			inline constexpr auto operator""_gamemode(const char* val, std::size_t length) { return hash_gamemode(std::string(val, length)); }
-			inline constexpr auto operator""_script(const char* val, std::size_t length) { return hash_script(std::string(val, length)); }
-		}
-	}
-
-	namespace jup {
-		inline constexpr auto& hash_asset = iw9::hash_asset;
-		inline constexpr auto& hash_dvar = iw9::hash_dvar;
-		inline constexpr auto& hash_gamemode = iw9::hash_gamemode;
-		inline constexpr auto& hash_script = iw9::hash_script;
-
-		namespace literals {
-			inline constexpr auto operator""_asset(const char* val, std::size_t length) { return hash_asset(std::string(val, length)); }
-			inline constexpr auto operator""_dvar(const char* val, std::size_t length) { return hash_dvar(std::string(val, length)); }
-			inline constexpr auto operator""_gamemode(const char* val, std::size_t length) { return hash_gamemode(std::string(val, length)); }
-			inline constexpr auto operator""_script(const char* val, std::size_t length) { return hash_script(std::string(val, length)); }
-		}
-	}
-
-	namespace t10 {
-		inline constexpr auto& hash_asset = iw9::hash_asset;
-		inline constexpr auto& hash_dvar = iw9::hash_dvar;
-
-		constexpr auto hash_script(const std::string& str) { return hash_secure(str, 0x1C2F2E3C8A257D07, "zt@f3yp(d[kkd=_@", IV_TYPE2_64); }
-		constexpr auto hash_script_sp(const std::string& str) { return hash_64a("zt@f3yp(d[kkd=_@", hash_64a(str, 0x1C2F2E3C8A257D07, IV_TYPE2_64), IV_TYPE2_64); }
-
-		namespace literals {
-			inline constexpr auto operator""_asset(const char* val, std::size_t length) { return hash_asset(std::string(val, length)); }
-			inline constexpr auto operator""_dvar(const char* val, std::size_t length) { return hash_dvar(std::string(val, length)); }
-			inline constexpr auto operator""_script(const char* val, std::size_t length) { return hash_script(std::string(val, length)); }
-			inline constexpr auto operator""_script_sp(const char* val, std::size_t length) { return hash_script_sp(std::string(val, length)); }
-		}
-	}
-
-	namespace sat {
-		inline constexpr auto& hash_asset = iw9::hash_asset;
-		inline constexpr auto& hash_dvar = iw9::hash_dvar;
-		inline constexpr auto& hash_script = t10::hash_script;
-
-		namespace literals {
-			inline constexpr auto operator""_asset(const char* val, std::size_t length) { return hash_asset(std::string(val, length)); }
-			inline constexpr auto operator""_dvar(const char* val, std::size_t length) { return hash_dvar(std::string(val, length)); }
-			inline constexpr auto operator""_script(const char* val, std::size_t length) { return hash_script(std::string(val, length)); }
-		}
-	}
-
-	namespace rex {
-		inline constexpr auto& hash_asset = iw9::hash_asset;
-		inline constexpr auto& hash_dvar = iw9::hash_dvar;
-
-		namespace literals {
-			inline constexpr auto operator""_asset(const char* val, std::size_t length) { return hash_asset(std::string(val, length)); }
-			inline constexpr auto operator""_dvar(const char* val, std::size_t length) { return hash_dvar(std::string(val, length)); }
-		}
-	}
 }

@@ -49,15 +49,7 @@ END
 // Bitmap
 //
 
-IDB_BANNER_IW8_IMG      BITMAP                  "resources\\banner-iw8.bmp"
-
 IDB_BANNER_S4_IMG       BITMAP                  "resources\\banner-s4.bmp"
-
-IDB_BANNER_IW9_IMG      BITMAP                  "resources\\banner-iw9.bmp"
-
-IDB_BANNER_JUP_IMG      BITMAP                  "resources\\banner-jup.bmp"
-
-IDB_BANNER_HQ_IMG		BITMAP					"resources\\banner-hq.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////

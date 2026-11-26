@@ -353,22 +353,8 @@ int i_main(HINSTANCE h_inst, std::vector<std::string> c_args) {
 
 		dialog::window_title = std::format("Call of Duty®: {} - Crash handler", dialog::game_name);
 
-		int banner_img = IDB_BANNER_HQ_IMG; // default to "Call of Duty: HQ" image
-		if (dialog::game_name == "Modern Warfare®"s) {
-			banner_img = IDB_BANNER_IW8_IMG;
-		}
-		else if (dialog::game_name == "Vanguard"s) {
-			banner_img = IDB_BANNER_S4_IMG;
-		}
-		else if (dialog::game_name == "Modern Warfare® II"s) {
-			banner_img = IDB_BANNER_IW9_IMG;
-		}
-		else if (dialog::game_name == "Modern Warfare® III"s) {
-			banner_img = IDB_BANNER_JUP_IMG;
-		}
-
 		dialog::set_dialog_window_title(utils::string::convert(dialog::window_title).c_str());
-		dialog::set_dialog_banner(LoadImage(GetModuleHandle(nullptr), MAKEINTRESOURCE(banner_img), IMAGE_BITMAP, dialog_width, banner_height,
+		dialog::set_dialog_banner(LoadImage(GetModuleHandle(nullptr), MAKEINTRESOURCE(IDB_BANNER_S4_IMG), IMAGE_BITMAP, dialog_width, banner_height,
 			LR_DEFAULTCOLOR | LR_CREATEDIBSECTION));
 
 		dialog::set_dialog_icon(LoadIcon(nullptr, IDI_ERROR));

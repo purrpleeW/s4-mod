@@ -38,25 +38,6 @@ namespace party {
 			// works fine but will disband (most of the time?) and doesn't join online games
 			game::PartyAtomic_AcceptInviteMP(0, &session_info, 0, FALSE, FALSE);
 
-			// will not disband but requires more signatures - for some reason also doesn't allow joining on system link anymore lol??
-			/*
-			bool setup_status = game::PartyAtomic_SetupPotentialHostForJoining(0, &session_info, iw8::PartyType::GAME_LOBBY_ID, false, game::g_partyJoinInfo);
-			iw8::PartyData* active_party = game::Party_GetActiveParty();
-			if (game::Party_InParty(active_party)) {
-				game::PartyAtomic_FillSubPartyInfoForParty(game::g_partyJoinInfo, active_party);
-			}
-			else {
-				game::PartyAtomic_FillSubPartyInfoForLocalClients(game::g_partyJoinInfo);
-			}
-
-			int retry_count = game::Dvar_GetIntSafe("OLPNMRSNLM");	// pt_searchConnectAttempts
-			game::PartyAtomic_StartJoin(game::g_partyJoinInfo, active_party, iw8::PartyJoinType::PJT_INVITE, iw8::PartyJoinState::PARTYJOIN_REQUEST, retry_count);
-
-			if (!setup_status) {
-				LOG("Component/Party", WARN, "Failed to setup potential host for joining.");
-			}
-			*/
-
 			// does not fix online cg, infact doesn't work at all
 			/*
 			if (game::PartyAtomic_SetupPotentialHostForJoining(0, &session_info, s4::PartyType::GAME_LOBBY_ID, false, game::g_partyJoinInfo)) {

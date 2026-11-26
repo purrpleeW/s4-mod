@@ -8,10 +8,6 @@ crash_handler_rc = import('windows').compile_resources(
 	'resource.rc',
 	depend_files: files(
 		'resource.h',
-		'resources/banner-hq.bmp',
-		'resources/banner-iw8.bmp',
-		'resources/banner-iw9.bmp',
-		'resources/banner-jup.bmp',
 		'resources/banner-s4.bmp',
 		'resources/icon.ico'
 	),
