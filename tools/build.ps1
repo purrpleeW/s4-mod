@@ -45,7 +45,7 @@ $BuildDirectory = [IO.Path]::GetFullPath($BuildDirectory)
 
 Push-Location $root
 try {
-	& git submodule update --init
+	& git submodule update --init --depth 1 --jobs $Jobs
 	if ($LASTEXITCODE -ne 0) {
 		throw 'Initializing the pinned dependencies failed.'
 	}
