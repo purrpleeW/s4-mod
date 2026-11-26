@@ -1,0 +1,21 @@
+#include "resource.h"
+
+// RCDATA resources
+FULL_VERSION_STRING         				RCDATA { BUILD_VERSION_STRING "(" BUILD_USER_NAME ")" "." BUILD_TIMESTAMP "." BUILD_FINGERPRINT }
+
+DVAR_LIST_JSON              				RCDATA "resources\\dvar_list.json"
+EXTERNAL_CRASH_HANDLER      				RCDATA "zpCrashHandler.exe"
+
+DW_PLAYLIST_REV47							RCDATA "resources\\dw\\playlists\\playlists-readable\\unified_playlist.aggr47.txt"
+DW_PLAYLIST_REV182							RCDATA "resources\\dw\\playlists\\playlists-readable\\unified_playlist.aggr182.txt"
+DW_PLAYLIST_REV70							RCDATA "resources\\dw\\playlists\\playlists-readable\\unified_playlist.aggr70.txt"
+DW_PLAYLIST_REV86							RCDATA "resources\\dw\\playlists\\playlists-readable\\unified_playlist.aggr86.txt"
+DW_PLAYLIST_REV29							RCDATA "resources\\dw\\playlists\\playlists-readable\\unified_playlist.aggr29.txt"
+
+STEAM_EMULATOR_LIB							RCDATA	"resources\\steam\\steam_api64_GSE.dll"
+STEAM_EMULATOR_DEPS							RCDATA	"resources\\steam\\steam_modules.zip"
+STEAM_EMULATOR_SETTINGS						RCDATA	"resources\\steam\\steam_settings.zip"
+
+LUA_REPLACE_ui_frontEnd_mp_QuickPlayButton 	RCDATA "resources\\lua\\ui\\frontEnd\\mp\\QuickPlayButton.lua"
+
+GSC_GIVE_WEAPON								RCDATA "resources\\gsc\\give_weapon.gsc"

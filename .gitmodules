@@ -1,0 +1,54 @@
+[submodule "vendor/WhisperNet"]
+	path = vendor/WhisperNet
+	url = https://git.zeromods.xyz/ZeroMods/WhisperNet
+[submodule "vendor/ZeroBlue"]
+	path = vendor/ZeroBlue
+	url = https://git.zeromods.xyz/ZeroMods/ZeroBlue
+[submodule "vendor/asmjit"]
+	path = vendor/asmjit
+	url = https://github.com/asmjit/asmjit.git
+[submodule "vendor/ay_obfuscate"]
+	path = vendor/ay_obfuscate
+	url = https://github.com/adamyaxley/Obfuscate
+[submodule "vendor/backward-cpp"]
+	path = vendor/backward-cpp
+	url = https://gitlab.com/xifil/backward-cpp.git
+[submodule "vendor/curl"]
+	path = vendor/curl
+	url = https://github.com/curl/curl.git
+[submodule "vendor/gsc-tool"]
+	path = vendor/gsc-tool
+	url = https://git.zeromods.xyz/ZeroMods/gsc-tool.git
+[submodule "vendor/imgui"]
+	path = vendor/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "vendor/libtomcrypt"]
+	path = vendor/libtomcrypt
+	url = https://github.com/libtom/libtomcrypt.git
+[submodule "vendor/libtommath"]
+	path = vendor/libtommath
+	url = https://github.com/libtom/libtommath.git
+[submodule "vendor/magic_enum"]
+	path = vendor/magic_enum
+	url = https://github.com/Neargye/magic_enum
+[submodule "vendor/minhook"]
+	path = vendor/minhook
+	url = https://github.com/TsudaKageyu/minhook.git
+[submodule "vendor/nlohmann_json"]
+	path = vendor/nlohmann_json
+	url = https://github.com/nlohmann/json
+[submodule "vendor/rapidjson"]
+	path = vendor/rapidjson
+	url = https://github.com/Tencent/rapidjson.git
+[submodule "vendor/stb"]
+	path = vendor/stb
+	url = https://github.com/nothings/stb.git
+[submodule "vendor/udis86"]
+	path = vendor/udis86
+	url = https://github.com/vmt/udis86.git
+[submodule "vendor/xxhash"]
+	path = vendor/xxhash
+	url = https://github.com/Cyan4973/xxHash.git
+[submodule "vendor/zlib"]
+	path = vendor/zlib
+	url = https://github.com/madler/zlib.git

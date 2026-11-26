@@ -1,0 +1,18 @@
+#pragma once
+#include "engine/engine_common.hpp"
+
+namespace jup {
+	enum class DLogErrorCode : std::uint8_t {
+		DLOG_ERROR_CODE_NONE = 0,
+		DLOG_ERROR_CODE_FATAL = 1,
+		DLOG_ERROR_CODE_DROP = 2,
+		DLOG_ERROR_CODE_SERVER_DISCONNECT = 3,
+		DLOG_ERROR_CODE_LOCALIZATION = 4,
+		DLOG_ERROR_CODE_DISCONNECT = 5,
+		DLOG_ERROR_CODE_SCRIPT = 6,
+		DLOG_ERROR_CODE_SCRIPT_DROP = 7,
+		DLOG_ERROR_CODE_DLOG = 8,
+		DLOG_ERROR_CODE_LUA = 9,
+		DLOG_ERROR_CODE_SYS_ERROR = 10
+	};
+}

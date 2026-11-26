@@ -1,0 +1,11 @@
+#pragma once
+#include "engine/engine_common.hpp"
+
+namespace jup {
+	enum class CL_TransientsCollisionMP_TransientMode {
+		CL_TRANSIENTS_COLLISION_MP_TRANSIENTMODE_NONE = 0,
+		CL_TRANSIENTS_COLLISION_MP_TRANSIENTMODE_CLOSEST = 1,
+		CL_TRANSIENTS_COLLISION_MP_TRANSIENTMODE_ALL = 2,
+		CL_TRANSIENTS_COLLISION_MP_TRANSIENTMODE_COUNT = 3
+	};
+}

@@ -1,0 +1,14 @@
+#pragma once
+
+namespace amd_ags {
+	enum class AGSReturnCode {
+		AGS_SUCCESS,
+		AGS_FAILURE,
+		AGS_INVALID_ARGS,
+		AGS_OUT_OF_MEMORY,
+		AGS_ERROR_MISSING_DLL,
+		AGS_ERROR_LEGACY_DRIVER,
+		AGS_EXTENSION_NOT_SUPPORTED,
+		AGS_ADL_FAILURE
+	};
+}
