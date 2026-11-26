@@ -1,4 +1,4 @@
-option('dev', type: 'boolean', value: false, description: 'Enable Pre-Release mode')
+option('dev', type: 'boolean', value: true, description: 'Enable Pre-Release mode')
 option('protect', type: 'boolean', value: false, description: 'Enable code obfuscation and VM protection')
 option('f2p', type: 'boolean', value: false, description: 'Enable the Free-To-Play (F2P) limited time beta options')
 option('offline', type: 'boolean', value: false, description: 'Enable the offline-only builds')

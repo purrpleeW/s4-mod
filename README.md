@@ -33,6 +33,8 @@ Build.cmd
 
 The built client is located at `build/src/client-s4/version.dll`.
 
+After adding or removing source files, run `Refresh.cmd` to regenerate the Meson build files without compiling, `Build.cmd` also refreshes them automatically too.
+
 ## Features
 
 - Offline play and modding features that aren't available in a retail install.

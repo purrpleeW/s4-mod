@@ -58,7 +58,15 @@ try {
 		}
 	}
 
-	$setupArguments = @('setup', $BuildDirectory, '--native-file', (Join-Path $root 'meson_amd64.ini'), '--buildtype', $Configuration)
+	$setupArguments = @(
+		'setup',
+		$BuildDirectory,
+		'--native-file',
+		(Join-Path $root 'meson_amd64.ini'),
+		'--buildtype',
+		$Configuration,
+		'-Ddev=true'
+	)
 	if (Test-Path -LiteralPath (Join-Path $BuildDirectory 'meson-private\coredata.dat')) {
 		$setupArguments += '--reconfigure'
 	}
@@ -68,11 +76,17 @@ try {
 	}
 
 	if (-not $SetupOnly) {
+		& py -3 -m mesonbuild.mesonmain compile -C $BuildDirectory -j $Jobs src/crash_handler/zpCrashHandler
+		if ($LASTEXITCODE -ne 0) {
+			throw 'Building the crash handler failed.'
+		}
+
 		& py -3 -m mesonbuild.mesonmain compile -C $BuildDirectory -j $Jobs src/client-s4/version src/piped_console/zpPipedConsole
 		if ($LASTEXITCODE -ne 0) {
 			throw 'Building s4-mod failed.'
 		}
 		Write-Host "Client DLL: $(Join-Path $BuildDirectory 'src\client-s4\version.dll')"
+		Write-Host "Crash handler: $(Join-Path $BuildDirectory 'src\crash_handler\zpCrashHandler.exe')"
 		Write-Host "Piped console: $(Join-Path $BuildDirectory 'src\piped_console\zpPipedConsole.exe')"
 	}
 }
